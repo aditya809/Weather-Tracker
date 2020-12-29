@@ -1,0 +1,26 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+
+<div class="jumbotron">
+  <h1 class="display-4">Details of {{wet.location.name}}</h1>
+  <strong>Region : </strong>{{wet.location.region}}<br>
+  <strong>Country : </strong>{{wet.location.country}}<br>
+  <strong>Local Time : </strong>{{wet.location.localtime}}<br>
+  <strong>Latitude : </strong>{{wet.location.lat}}<br>
+  <strong>Longitude : </strong>{{wet.location.lon}}<br>
+  <strong>Temperature : </strong> {{wet.current.temperature}} C<br>
+    <strong>Feels Like Temperature : </strong> {{wet.current.feelslike}} C<br>
+    <strong>Wind Speed : </strong>{{wet.current.wind_speed}} km/h<br>
+  <strong>Weather Description : </strong>{{wet.current.weather_descriptions}}<br>
+
+
+  </div>
+
+  </div>
+
+
+{% endblock %}

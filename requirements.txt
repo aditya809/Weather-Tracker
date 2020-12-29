@@ -1,0 +1,7 @@
+apiclient==1.0.4
+Django==2.0.12
+gunicorn==19.9.0
+pipenv==2018.11.26
+requests==2.22.0
+virtualenv==16.7.8
+

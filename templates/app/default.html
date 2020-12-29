@@ -1,0 +1,67 @@
+{% extends 'app/base.html' %}s
+
+{% block content %}
+
+</nav>
+
+
+
+<div class="jumbotron">
+  <h1 class="display-4">Welcome To Live Weather Station</h1>
+  <hr class="my-4">
+ <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'home'%}">
+    {% csrf_token %}
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Load Saved Location</button>
+  </form>
+
+</div>
+
+<table class="table table-light table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">City Name</th>
+      <th scope="col">Region</th>
+      <th scope="col">Temperature</th>
+      <th scope="col">Feels Like</th>
+      <th scope="col">Local Time</th>
+    </tr>
+  </thead>
+
+
+        <tr>
+          <td>{{d1.location.name}}</td>
+          <td>{{d1.location.region}}</td>
+          <td> {{d1.current.temperature}}</td>
+          <td> {{d1.current.feelslike}}</td>
+          <td> {{d1.location.localtime}}</td>
+
+        </tr>
+
+        <tr>
+          <td>{{d2.location.name}}</td>
+          <td>{{d2.location.region}}</td>
+          <td> {{d2.current.temperature}}</td>
+          <td> {{d2.current.feelslike}}</td>
+          <td> {{d2.location.localtime}}</td>
+
+        </tr>
+
+
+
+
+
+  </table>
+
+
+
+<br></br>
+<div class="container">
+  <form class="form-inline" method="POST" action="{% url 'searched_location'%}">
+    {% csrf_token %}
+    <input class="form-control" type="search" placeholder="Enter Location " aria-label="Search" name='city'>
+    <button class="btn btn-outline-warning" type="submit">ChecK Weather!!</button>
+    </div>
+  </form>
+
+</div>>
+{% endblock %}
